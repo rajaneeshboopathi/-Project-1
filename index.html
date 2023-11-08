@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TamilNadu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+   
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #000000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      gap: 30px;
+      border-radius:50% solid aquamarine;
+    }
+
+    #container {
+      background-color: #1c3334;
+      width: 500px;
+      height: 600px;
+      color: white;
+      padding: 50px 5px 5px 5px;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    #input {
+      width: 250px;
+      height: 45px;
+      outline: none;
+      font-size: 20px;
+      text-align: center;
+
+    }
+    h2{
+      font-size: 30px;
+    }
+
+
+    button {
+      width: 140px;
+      height: 45px;
+      font-size: 20px;
+      transition: all .5s;
+      background-color: #e1e10b;
+      border-radius: 10px;
+    }
+
+    button:hover {
+      scale: 1.1;
+    }
+
+    .box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #output {
+      font-size: 30px;
+      padding: 10px;
+      text-align: center;
+
+    }
+
+    input:invalid {
+      animation: shake .3s linear;
+      border: 2px solid red;
+    }
+
+
+    @keyframes share {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translateX(5px);
+      }
+
+      50% {
+        transform: translateX(-5px);
+      }
+
+      100% {
+        transform: translateX(5px);
+      }
+    }
+
+    @media screen and (max-width:768px) {
+      #container {
+        margin: 20px;
+        width: 350px;
+        height: 500px;
+      }
+      body{
+        border-radius:50% solid aquamarine;
+      }
+
+
+
+
+      .box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: -20px;
+      }
+
+      #output {
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        padding: 10px;
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="box">
+      <h2>Select District</h2>
+      <select name="" id="input">
+        <option value="Chennai">Chennai</option>
+        <option value="Coimbatore">Coimbatore</option>
+        <option value="Salem">Salem</option>
+        <option value="Namakkal">Namakkal</option>
+        <option value="Erode">Erode</option>
+        <option value="Madurai">Madurai</option>
+        <option value="Thanjavur">Thanjavur</option>
+        <option value="Trichirappalli">Trichirappalli</option>
+        <option value="Kanchipuram">Kanchipuram</option>
+        <option value="Kaniyakumari">Kaniyakumari</option>
+        <option value="Tiruvallur">Tiruvallur</option>
+        <option value="Dindigul">Dindigul</option>
+        <option value="Tiruppur">Tiruppur</option>
+        <option value="Ramanathapuram">Ramanathapuram</option>
+        <option value="Nagapattinam">Nagapattinam</option>
+        <option value="Tirunaveli">Tirunaveli</option>
+        <option value="Vellore">Vellore</option>
+        <option value="Tiruvannamalai">Tiruvannamalai</option>
+        <option value="Krishnagiri">Krishnagiri</option>
+        <option value="Sivagangai">Sivagangai</option>
+      </select>
+      <button type="submit">Show Status</button>
+    </div>
+  </div>
+  <script>
+    const button = document.querySelector("button");
+    button.addEventListener("click", showstatus);
+    let resultdiv = document.createElement('div');
+    resultdiv.id = "output";
+    resultdiv.style.marginTop="50px"
+    document.getElementById("container").appendChild(resultdiv);
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TamilNadu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+   
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #000000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      gap: 30px;
+      border-radius:50% solid aquamarine;
+    }
+
+    #container {
+      background-color: #1c3334;
+      width: 500px;
+      height: 600px;
+      color: white;
+      padding: 50px 5px 5px 5px;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    #input {
+      width: 250px;
+      height: 45px;
+      outline: none;
+      font-size: 20px;
+      text-align: center;
+
+    }
+    h2{
+      font-size: 30px;
+    }
+
+
+    button {
+      width: 140px;
+      height: 45px;
+      font-size: 20px;
+      transition: all .5s;
+      background-color: #e1e10b;
+      border-radius: 10px;
+    }
+
+    button:hover {
+      scale: 1.1;
+    }
+
+    .box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #output {
+      font-size: 30px;
+      padding: 10px;
+      text-align: center;
+
+    }
+
+    input:invalid {
+      animation: shake .3s linear;
+      border: 2px solid red;
+    }
+
+
+    @keyframes share {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translateX(5px);
+      }
+
+      50% {
+        transform: translateX(-5px);
+      }
+
+      100% {
+        transform: translateX(5px);
+      }
+    }
+
+    @media screen and (max-width:768px) {
+      #container {
+        margin: 20px;
+        width: 350px;
+        height: 500px;
+      }
+      body{
+        border-radius:50% solid aquamarine;
+      }
+
+
+
+
+      .box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: -20px;
+      }
+
+      #output {
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        padding: 10px;
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="box">
+      <h2>Select District</h2>
+      <select name="" id="input">
+        <option value="Chennai">Chennai</option>
+        <option value="Coimbatore">Coimbatore</option>
+        <option value="Salem">Salem</option>
+        <option value="Namakkal">Namakkal</option>
+        <option value="Erode">Erode</option>
+        <option value="Madurai">Madurai</option>
+        <option value="Thanjavur">Thanjavur</option>
+        <option value="Trichirappalli">Trichirappalli</option>
+        <option value="Kanchipuram">Kanchipuram</option>
+        <option value="Kaniyakumari">Kaniyakumari</option>
+        <option value="Tiruvallur">Tiruvallur</option>
+        <option value="Dindigul">Dindigul</option>
+        <option value="Tiruppur">Tiruppur</option>
+        <option value="Ramanathapuram">Ramanathapuram</option>
+        <option value="Nagapattinam">Nagapattinam</option>
+        <option value="Tirunaveli">Tirunaveli</option>
+        <option value="Vellore">Vellore</option>
+        <option value="Tiruvannamalai">Tiruvannamalai</option>
+        <option value="Krishnagiri">Krishnagiri</option>
+        <option value="Sivagangai">Sivagangai</option>
+      </select>
+      <button type="submit">Show Status</button>
+    </div>
+  </div>
+  <script>
+    const button = document.querySelector("button");
+    button.addEventListener("click", showstatus);
+    let resultdiv = document.createElement('div');
+    resultdiv.id = "output";
+    resultdiv.style.marginTop="50px"
+    document.getElementById("container").appendChild(resultdiv);
+
+    function showstatus() {
+      const input = document.getElementById("input");
+      const city = input.options[input.selectedIndex].value;
+      var famous = "";
+      switch (city) {
+        case "Chennai":
+          famous = "Marina Beach"
+          break;
+
+        case "Coimbatore":
+          famous = "Dhyanalinga Temple"
+          break;
+        case "Tirunaveli":
+          famous = "Halwa"
+          break;
+        case "Namakkal":
+          famous = "Egg"
+          break;
+        case "Salem":
+          famous = "Sona College Of Technology"
+          break;
+        case "Kanchipuram":
+          famous = "Silk"
+          break;
+        case "Nagapattinam":
+          famous = "Kola Fish"
+          break;
+        case "Tiruppur":
+          famous = "Baniyan and Trouser"
+          break;
+        case "Erode":
+          famous = "Turmeric and clothes"
+          break;
+        case "Madurai":
+          famous = "Malligai and Meenakshi Amman"
+          break;
+        case "Thanjavur":
+          famous = "Temples"
+          break;
+        case "Trichirappalli":
+          famous = "Boondi"
+          break;
+        case "Sivagangai":
+          famous = "Pattammangalam Guru Temple"
+          break;
+        case "Krishnagiri":
+          famous = "Mango Capital of India"
+          break;
+        case "Tiruvannamalai":
+          famous = "Lord Arulmigu Annamalaiyar Temple"
+          break;
+        case "Kaniyakumari":
+          famous = "Thiruvalluvar Statue"
+          break;
+        case "Vellore":
+          famous = "Jalakandeswarar Temple"
+          break;
+        case "Tirunaveli":
+          famous = "Halwa"
+          break;
+        case "Dindigul":
+          famous = "Lock"
+          break;
+        case "Thiruvallur":
+          famous = "Veeraraghava Temple"
+          break;
+        case "Ramanathapuram":
+          famous = "Pamban Bridge"
+          break;
+
+      }
+
+      let text = `The Indian City Of ${city} Is Famous For ${famous} .`
+      document.getElementById("output").innerHTML = text;
+    }
+  </script>
+</body>
+
+</html>￼Enter    function showstatus() {
+      const input = document.getElementById("input");
+      const city = input.options[input.selectedIndex].value;
+      var famous = "";
+      switch (city) {
+        case "Chennai":
+          famous = "Marina Beach"
+          break;
+
+        case "Coimbatore":
+          famous = "Dhyanalinga Temple"
+          break;
+        case "Tirunaveli":
+          famous = "Halwa"
+          break;
+        case "Namakkal":
+          famous = "Egg"
+          break;
+        case "Salem":
+          famous = "Sona College Of Technology"
+          break;
+        case "Kanchipuram":
+          famous = "Silk"
+          break;
+        case "Nagapattinam":
+          famous = "Kola Fish"
+    break;
+        case "Tiruppur":
+          famous = "Baniyan and Trouser"
+          break;
+        case "Erode":
+          famous = "Turmeric and clothes"
+          break;
+        case "Madurai":
+          famous = "Malligai and Meenakshi Amman"
+          break;
+        case "Thanjavur":
+          famous = "Temples"
+          break;
+        case "Trichirappalli":
+          famous = "Boondi"
+          break;
+        case "Sivagangai":
+          famous = "Pattammangalam Guru Temple"
+          break;
+        case "Krishnagiri":
+          famous = "Mango Capital of India"
+          break;
+        case "Tiruvannamalai":
+          famous = "Lord Arulmigu Annamalaiyar Temple"
+          break;
+        case "Kaniyakumari":
